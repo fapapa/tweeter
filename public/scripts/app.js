@@ -49,6 +49,9 @@ $(document).ready(() => {
       $.ajax($form.attr('action'), {
         method: $form.attr('method'),
         data: $form.serialize()
+      }).then(data => {
+        $("#tweets").empty();
+        loadTweets();
       });
       $form.trigger('reset');
     }
