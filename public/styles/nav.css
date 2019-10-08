@@ -1,0 +1,15 @@
+nav {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1000;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-family: "Bungee", sans-serif;
+}
+
+nav span {
+  display: block;
+  padding: 1.5em;
+}
