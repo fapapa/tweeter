@@ -9,15 +9,15 @@ const createTweetElement = (tweetData) => {
 
   let headerEl = $("<header>");
   headerEl.append($(`<img src="${tweetData.user.avatars}">`));
-  headerEl.append($("<span>").addClass("name").html(tweetData.user.name));
-  headerEl.append($("<span>").addClass("handle").html(tweetData.user.handle));
+  headerEl.append($("<span>").addClass("name").text(tweetData.user.name));
+  headerEl.append($("<span>").addClass("handle").text(tweetData.user.handle));
   tweetEl.append(headerEl);
 
-  tweetEl.append($("<div>").addClass("body").html(tweetData.content.text));
+  tweetEl.append($("<div>").addClass("body").text(tweetData.content.text));
 
   let footerEl = $("<footer>");
-  footerEl.append($("<div>").addClass("timestamp").html(new Date(tweetData.created_at)));
-  footerEl.append($("<div>").addClass("flags").html("flags"));
+  footerEl.append($("<div>").addClass("timestamp").text(new Date(tweetData.created_at)));
+  footerEl.append($("<div>").addClass("flags").text("flags"));
   tweetEl.append(footerEl);
 
   return tweetEl;
