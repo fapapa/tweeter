@@ -39,11 +39,16 @@ $(document).ready(() => {
 
   $("form").on('submit', function(event) {
     const $form = $(this);
+    const tweetText = $($form.children("textarea")[0]);
 
-    $.ajax($form.attr('action'), {
-      method: $form.attr('method'),
-      data: $form.serialize()
-    });
+    if (tweetText.val() === "" || tweetText.val().length > 140) {
+      alert("Not a valid tweet");
+    } else {
+      $.ajax($form.attr('action'), {
+        method: $form.attr('method'),
+        data: $form.serialize()
+      });
+    }
 
     event.preventDefault();
   });
