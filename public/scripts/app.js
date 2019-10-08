@@ -41,13 +41,16 @@ $(document).ready(() => {
     const $form = $(this);
     const tweetText = $($form.children("textarea")[0]);
 
-    if (tweetText.val() === "" || tweetText.val().length > 140) {
-      alert("Not a valid tweet");
+    if (tweetText.val() === "") {
+      alert("Tweet must contain some text.");
+    } else if (tweetText.val().length > 140) {
+      alert("Tweet too long.");
     } else {
       $.ajax($form.attr('action'), {
         method: $form.attr('method'),
         data: $form.serialize()
       });
+      $form.trigger('reset');
     }
 
     event.preventDefault();
