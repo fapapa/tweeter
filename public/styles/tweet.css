@@ -1,0 +1,19 @@
+#tweets .tweet {
+  border: 3px #545149 solid;
+  padding: 10px;
+  overflow: auto;
+}
+
+#tweets footer {
+  padding: 10px;
+  border-top: 3px #545149 solid;
+  font-size: 0.8em;
+}
+
+#tweets footer .timestamp {
+  float: left;
+}
+
+#tweets footer .flags {
+  float: right;
+}
