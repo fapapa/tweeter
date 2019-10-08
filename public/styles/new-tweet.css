@@ -22,3 +22,7 @@
   font-family: "Bungee", sans-serif;
   float: right;
 }
+
+.new-tweet span.negative {
+  color: #f00;
+}
