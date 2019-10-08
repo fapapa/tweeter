@@ -32,6 +32,17 @@ const renderTweets = (tweets) => {
 };
 
 $(document).ready(() => {
+  $("form").on('submit', function(event) {
+    const $form = $(this);
+
+    $.ajax($form.attr('action'), {
+      method: $form.attr('method'),
+      data: $form.serialize()
+    });
+
+    event.preventDefault();
+  });
+
   const data = [
     {
       "user": {
