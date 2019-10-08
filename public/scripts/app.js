@@ -37,6 +37,13 @@ $(document).ready(() => {
   };
   loadTweets();
 
+  $("#new-tweet-link").click((event) => {
+    const $newTweetSection = $("section.new-tweet");
+    $newTweetSection.toggle('fast');
+    $newTweetSection.find("textarea").focus();
+    event.preventDefault;
+  });
+
   $("form").on('submit', function(event) {
     const $form = $(this);
     const tweetText = $($form.children("textarea")[0]);

@@ -6,10 +6,25 @@ nav {
   z-index: 1000;
   background-color: #4056A1;
   color: #FFFFFF;
-  font-family: "Bungee", sans-serif;
 }
 
 nav span {
   display: block;
+  float: left;
   padding: 1.5em;
+  font-family: "Bungee", sans-serif;
+}
+
+nav .menu {
+  float: right;
+  padding: 1.5em;
+}
+
+nav .menu a {
+  color: white;
+  text-decoration: none;
+}
+
+nav .menu a:hover {
+  text-decoration: underline;
 }
