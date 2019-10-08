@@ -38,7 +38,9 @@ $(document).ready(() => {
   loadTweets();
 
   $("#new-tweet-link").click((event) => {
-    $("section.new-tweet").toggle('fast');
+    const $newTweetSection = $("section.new-tweet");
+    $newTweetSection.toggle('fast');
+    $newTweetSection.find("textarea").focus();
     event.preventDefault;
   });
 
