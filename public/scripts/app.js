@@ -31,6 +31,15 @@ const renderTweets = (tweets) => {
   }
 };
 
+const setValidationErrorMessage = (message) => {
+  $("section.new-tweet .validation-error .message").text(message);
+  $("section.new-tweet .validation-error").show('fast');
+};
+
+const resetValidation = () => {
+  $("section.new-tweet .validation-error").hide('fast');
+};
+
 $(document).ready(() => {
   const loadTweets = () => {
     $.ajax("/tweets").then(data => renderTweets(data));
@@ -41,17 +50,18 @@ $(document).ready(() => {
     const $newTweetSection = $("section.new-tweet");
     $newTweetSection.toggle('fast');
     $newTweetSection.find("textarea").focus();
-    event.preventDefault;
+    event.preventDefault();
   });
 
   $("form").on('submit', function(event) {
     const $form = $(this);
     const tweetText = $($form.children("textarea")[0]);
 
+    resetValidation();
     if (tweetText.val() === "") {
-      alert("Tweet must contain some text.");
+      setValidationErrorMessage("Tweet must contain some text.");
     } else if (tweetText.val().length > 140) {
-      alert("Tweet too long.");
+      setValidationErrorMessage("Tweet cannot be longer than 140 characters.");
     } else {
       $.ajax($form.attr('action'), {
         method: $form.attr('method'),
@@ -61,6 +71,7 @@ $(document).ready(() => {
         loadTweets();
       });
       $form.trigger('reset');
+      $(".new-tweet .counter").text("140");
     }
 
     event.preventDefault();
