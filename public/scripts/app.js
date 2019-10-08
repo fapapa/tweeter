@@ -36,6 +36,10 @@ const setValidationErrorMessage = (message) => {
   $("section.new-tweet .validation-error").show('fast');
 };
 
+const resetValidation = () => {
+  $("section.new-tweet .validation-error").hide('fast');
+};
+
 $(document).ready(() => {
   const loadTweets = () => {
     $.ajax("/tweets").then(data => renderTweets(data));
@@ -53,6 +57,7 @@ $(document).ready(() => {
     const $form = $(this);
     const tweetText = $($form.children("textarea")[0]);
 
+    resetValidation();
     if (tweetText.val() === "") {
       setValidationErrorMessage("Tweet must contain some text.");
     } else if (tweetText.val().length > 140) {
