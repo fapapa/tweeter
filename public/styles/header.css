@@ -1,4 +1,4 @@
-header {
+body>header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,12 +9,12 @@ header {
   background-image: url(/images/asfalt-light.png);
 }
 
-header img {
+body>header img {
   display: block;
   margin: auto;
 }
 
-header h2 {
+body>header h2 {
   margin-top: 15px;
   margin-bottom: 15px;
   text-align: center;
