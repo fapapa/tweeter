@@ -5,9 +5,20 @@
   overflow: auto;
 }
 
-#tweets header .handle {
+#tweets .tweet:hover {
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(196,202,227,1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(196,202,227,1);
+  box-shadow: 10px 10px 0px 0px rgba(196,202,227,1);
+}
+
+#tweets .tweet .handle {
+  display: none;
   float: right;
   color: #C4CAE3;
+}
+
+#tweets .tweet:hover .handle {
+  display: block;
 }
 
 #tweets .tweet .body {
