@@ -71,6 +71,7 @@ $(document).ready(() => {
         loadTweets();
       });
       $form.trigger('reset');
+      $(".new-tweet .counter").text("140");
     }
 
     event.preventDefault();
