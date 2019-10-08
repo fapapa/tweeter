@@ -1,7 +1,13 @@
 #tweets .tweet {
   border: 3px #545149 solid;
+  margin: 2em 0;
   padding: 10px;
   overflow: auto;
+}
+
+#tweets header .handle {
+  float: right;
+  color: #C4CAE3;
 }
 
 #tweets .tweet .body {
