@@ -52,3 +52,11 @@ main {
   transform: rotate(-90deg);
   opacity: 0.8;
 }
+
+@media screen and (max-width: 1023px) {
+  main {
+    float: none;
+    width: 90%;
+    margin-top: 1em;
+  }
+}
