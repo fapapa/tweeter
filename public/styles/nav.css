@@ -28,3 +28,10 @@ nav .menu a {
 nav .menu a:hover {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 767px) {
+  nav {
+    background-color: orange;
+    background-image: url(/images/asfalt-light.png);
+  }
+}
