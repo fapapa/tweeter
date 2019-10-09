@@ -1,5 +1,8 @@
+$tweeterGrey: #545149;
+$tweeterLightBlue: #C4CAE3;
+
 #tweets .tweet {
-  border: 3px #545149 solid;
+  border: 3px $tweeterGrey solid;
   margin: 0 5% 2em 5%;
   padding: 10px;
   overflow: auto;
@@ -14,7 +17,7 @@
 #tweets .tweet .handle {
   display: none;
   float: right;
-  color: #C4CAE3;
+  color: $tweeterLightBlue;
 }
 
 #tweets .tweet:hover .handle {
@@ -28,7 +31,7 @@
 
 #tweets footer {
   padding: 10px;
-  border-top: 3px #545149 solid;
+  border-top: 3px $tweeterGrey solid;
   font-size: 0.8em;
 }
 

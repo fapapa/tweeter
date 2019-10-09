@@ -5,7 +5,7 @@ nav {
   left: 0px;
   z-index: 1000;
   background-color: #4056A1;
-  color: #FFFFFF; }
+  color: #F4F1EC; }
 
 nav span {
   display: block;
@@ -18,7 +18,7 @@ nav .menu {
   padding: 1.5em; }
 
 nav .menu a {
-  color: white;
+  color: #F4F1EC;
   text-decoration: none; }
 
 nav .menu a:hover {

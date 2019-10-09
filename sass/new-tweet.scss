@@ -1,3 +1,12 @@
+$tweeterGrey: #545149;
+$tweeterBlue: #4152A1;
+$tweeterWhite: #f4f1ec;
+$errorBorder: red;
+$errorBG: #F99;
+
+$tweeterFont: "Bungee", sans-serif;
+$bodyFont: "Source Sans Pro", sans-serif;
+
 .new-tweet {
   display: none;
   margin: 0 5% 1em;
@@ -10,9 +19,9 @@
 .new-tweet .validation-error {
   display: none;
   margin-bottom: 1em;
-  border: 3px solid red;
+  border: 3px solid $errorBorder;
   padding: 1.5em;
-  background-color: #f99;
+  background-color: $errorBG;
 }
 
 .new-tweet textarea {
@@ -21,25 +30,25 @@
   margin-bottom: 10px;
   background-color: transparent;
   border: none;
-  border-bottom: 3px #545149 solid;
-  color: #545149;
-  font-family: "Source Sans Pro", sans-serif;
+  border-bottom: 3px $tweeterGrey solid;
+  color: $tweeterGrey;
+  font-family: $bodyFont;
   font-weight: 700;
 }
 
 .new-tweet input[type=submit] {
   border: none;
   padding: 4px 10px;
-  background-color: #4152A1;
-  color: white;
-  font-family: "Bungee", sans-serif;
+  background-color: $tweeterBlue;
+  color: $tweeterWhite;
+  font-family: $tweeterFont;
 }
 
 .new-tweet form span {
-  font-family: "Bungee", sans-serif;
+  font-family: $tweeterFont;
   float: right;
 }
 
 .new-tweet form span.negative {
-  color: #f00;
+  color: $errorBorder;
 }

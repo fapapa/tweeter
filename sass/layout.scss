@@ -13,11 +13,16 @@ html {
 /*
  * Global layout stuff
  */
+$darkGrey: #545149;
+$tweeterBlue: #4056A1;
+$tweeterWhite: #f4f1ec;
+$tweeterFont: "Bungee", sans-serif;
+$bodyFont: "Source Sans Pro", sans-serif;
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-family: "Source Sans Pro", sans-serif;
+  color: $darkGrey;
+  background-color: $tweeterWhite;
+  font-family: $bodyFont;
   font-size: 24px;
 }
 
@@ -46,8 +51,8 @@ main {
   right: 1.5em;
   bottom: 1.5em;
   background-color: orange;
-  font-family: "Bungee", sans-serif;
-  color: #4056A1;
+  font-family: $tweeterFont;
+  color: $tweeterBlue;
   text-decoration: none;
   transform: rotate(-90deg);
   opacity: 0.8;
