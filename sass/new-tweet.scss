@@ -10,45 +10,39 @@ $bodyFont: "Source Sans Pro", sans-serif;
 .new-tweet {
   display: none;
   margin: 0 5% 1em;
-}
-
-.new-tweet h2 {
-  margin-top: 0px;
-}
-
-.new-tweet .validation-error {
-  display: none;
-  margin-bottom: 1em;
-  border: 3px solid $errorBorder;
-  padding: 1.5em;
-  background-color: $errorBG;
-}
-
-.new-tweet textarea {
-  width: 100%;
-  height: 2.5rem;
-  margin-bottom: 10px;
-  background-color: transparent;
-  border: none;
-  border-bottom: 3px $tweeterGrey solid;
-  color: $tweeterGrey;
-  font-family: $bodyFont;
-  font-weight: 700;
-}
-
-.new-tweet input[type=submit] {
-  border: none;
-  padding: 4px 10px;
-  background-color: $tweeterBlue;
-  color: $tweeterWhite;
-  font-family: $tweeterFont;
-}
-
-.new-tweet form span {
-  font-family: $tweeterFont;
-  float: right;
-}
-
-.new-tweet form span.negative {
-  color: $errorBorder;
+  h2 {
+    margin-top: 0px;
+  }
+  .validation-error {
+    display: none;
+    margin-bottom: 1em;
+    border: 3px solid $errorBorder;
+    padding: 1.5em;
+    background-color: $errorBG;
+  }
+  textarea {
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px $tweeterGrey solid;
+    color: $tweeterGrey;
+    font-family: $bodyFont;
+    font-weight: 700;
+  }
+  input[type=submit] {
+    border: none;
+    padding: 4px 10px;
+    background-color: $tweeterBlue;
+    color: $tweeterWhite;
+    font-family: $tweeterFont;
+  }
+  form span {
+    font-family: $tweeterFont;
+    float: right;
+    &.negative {
+      color: $errorBorder;
+    }
+  }
 }

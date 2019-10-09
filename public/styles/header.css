@@ -11,15 +11,13 @@ body > header {
   height: 400px;
   background-color: orange;
   background-image: url(/images/asfalt-light.png); }
-
-body > header img {
-  display: block;
-  margin: auto; }
-
-body > header h2 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  text-align: center; }
+  body > header img {
+    display: block;
+    margin: auto; }
+  body > header h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center; }
 
 @media screen and (max-width: 1023px) {
   body > header {
