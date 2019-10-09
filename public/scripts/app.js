@@ -76,4 +76,20 @@ $(document).ready(() => {
 
     event.preventDefault();
   });
+
+  $("#back-to-top").click(() => {
+    $("html,body").animate({ scrollTop: 0 }, 'fast');
+    return false;
+  });
+
+  $(window).scroll(() => {
+    const scrollLevel = $(window).scrollTop();
+    const backToTop = $("#back-to-top");
+
+    if (scrollLevel > 400) {
+      backToTop.show();
+    } else {
+      backToTop.hide();
+    }
+  });
 });
