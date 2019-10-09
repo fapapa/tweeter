@@ -33,3 +33,9 @@ body>header h2 {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 499px) {
+  body>header {
+    margin-top: 150px;
+  }
+}

@@ -35,3 +35,11 @@ nav .menu a:hover {
     background-image: url(/images/asfalt-light.png);
   }
 }
+
+@media screen and (max-width: 499px) {
+  nav span, nav .menu {
+    float: none;
+    text-align: center;
+    padding: 1em;
+  }
+}
