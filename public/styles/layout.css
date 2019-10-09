@@ -32,6 +32,7 @@ main {
 }
 
 #back-to-top {
+  display: none;
   position: fixed;
   width: 0;
   height: 0;
