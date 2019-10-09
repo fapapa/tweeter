@@ -1,0 +1,30 @@
+nav {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1000;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+nav span {
+  display: block;
+  float: left;
+  padding: 1.5em;
+  font-family: "Bungee", sans-serif;
+}
+
+nav .menu {
+  float: right;
+  padding: 1.5em;
+}
+
+nav .menu a {
+  color: white;
+  text-decoration: none;
+}
+
+nav .menu a:hover {
+  text-decoration: underline;
+}
