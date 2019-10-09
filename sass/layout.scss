@@ -4,29 +4,34 @@
  * Do not modify these two selectors, please
  */
 html {
-  box-sizing: border-box; }
-
+  box-sizing: border-box;
+}
 *, *:before, *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 24px; }
+  font-size: 24px;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   width: 66.7%;
   float: right;
   margin-top: 150px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+}
 
 #back-to-top {
   display: none;
@@ -45,12 +50,13 @@ main {
   color: #4056A1;
   text-decoration: none;
   transform: rotate(-90deg);
-  opacity: 0.8; }
+  opacity: 0.8;
+}
 
 @media screen and (max-width: 1023px) {
   main {
     float: none;
     width: 90%;
-    margin-top: 1em; } }
-
-/*# sourceMappingURL=layout.css.map */
+    margin-top: 1em;
+  }
+}

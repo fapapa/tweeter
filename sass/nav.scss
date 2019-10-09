@@ -5,33 +5,41 @@ nav {
   left: 0px;
   z-index: 1000;
   background-color: #4056A1;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+}
 
 nav span {
   display: block;
   float: left;
   padding: 1.5em;
-  font-family: "Bungee", sans-serif; }
+  font-family: "Bungee", sans-serif;
+}
 
 nav .menu {
   float: right;
-  padding: 1.5em; }
+  padding: 1.5em;
+}
 
 nav .menu a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 nav .menu a:hover {
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 @media screen and (max-width: 767px) {
   nav {
     background-color: orange;
-    background-image: url(/images/asfalt-light.png); } }
+    background-image: url(/images/asfalt-light.png);
+  }
+}
+
 @media screen and (max-width: 499px) {
   nav span, nav .menu {
     float: none;
     text-align: center;
-    padding: 1em; } }
-
-/*# sourceMappingURL=nav.css.map */
+    padding: 1em;
+  }
+}

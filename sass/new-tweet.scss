@@ -1,16 +1,19 @@
 .new-tweet {
   display: none;
-  margin: 0 5% 1em; }
+  margin: 0 5% 1em;
+}
 
 .new-tweet h2 {
-  margin-top: 0px; }
+  margin-top: 0px;
+}
 
 .new-tweet .validation-error {
   display: none;
   margin-bottom: 1em;
   border: 3px solid red;
   padding: 1.5em;
-  background-color: #f99; }
+  background-color: #f99;
+}
 
 .new-tweet textarea {
   width: 100%;
@@ -21,20 +24,22 @@
   border-bottom: 3px #545149 solid;
   color: #545149;
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .new-tweet input[type=submit] {
   border: none;
   padding: 4px 10px;
   background-color: #4152A1;
   color: white;
-  font-family: "Bungee", sans-serif; }
+  font-family: "Bungee", sans-serif;
+}
 
 .new-tweet form span {
   font-family: "Bungee", sans-serif;
-  float: right; }
+  float: right;
+}
 
 .new-tweet form span.negative {
-  color: #f00; }
-
-/*# sourceMappingURL=new-tweet.css.map */
+  color: #f00;
+}
