@@ -85,11 +85,14 @@ $(document).ready(() => {
   $(window).scroll(() => {
     const scrollLevel = $(window).scrollTop();
     const backToTop = $("#back-to-top");
+    const newTweetLink = $("#new-tweet-link");
 
     if (scrollLevel > 400) {
       backToTop.show();
+      newTweetLink.hide();
     } else {
       backToTop.hide();
+      newTweetLink.show();
     }
   });
 });
