@@ -1,6 +1,6 @@
 #tweets .tweet {
   border: 3px #545149 solid;
-  margin: 2em 0;
+  margin: 0 5% 2em 5%;
   padding: 10px;
   overflow: auto;
 }

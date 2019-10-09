@@ -1,9 +1,13 @@
 body>header {
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin-top: 4.2em;
+  float: left;
+  margin-top: 150px;
+  margin-left: 4%;
+  width: 28.3%;
   height: 400px;
   background-color: orange;
   background-image: url(/images/asfalt-light.png);
