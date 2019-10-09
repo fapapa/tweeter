@@ -1,5 +1,10 @@
 .new-tweet {
   display: none;
+  margin: 0 5% 1em;
+}
+
+.new-tweet h2 {
+  margin-top: 0px;
 }
 
 .new-tweet .validation-error {
