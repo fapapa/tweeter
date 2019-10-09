@@ -1,0 +1,45 @@
+$tweeterBlue: #4056A1;
+$tweeterWhite: #F4F1EC;
+$tweeterFont: "Bungee", sans-serif;
+
+nav {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1000;
+  background-color: $tweeterBlue;
+  color: $tweeterWhite;
+  span {
+    display: block;
+    float: left;
+    padding: 1.5em;
+    font-family: $tweeterFont;
+  }
+  .menu {
+    float: right;
+    padding: 1.5em;
+    a {
+      color: $tweeterWhite;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    background-color: orange;
+    background-image: url(/images/asfalt-light.png);
+  }
+}
+
+@media screen and (max-width: 499px) {
+  nav span, nav .menu {
+    float: none;
+    text-align: center;
+    padding: 1em;
+  }
+}

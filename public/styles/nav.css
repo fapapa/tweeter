@@ -5,26 +5,29 @@ nav {
   left: 0px;
   z-index: 1000;
   background-color: #4056A1;
-  color: #FFFFFF;
-}
+  color: #F4F1EC; }
+  nav span {
+    display: block;
+    float: left;
+    padding: 1.5em;
+    font-family: "Bungee", sans-serif; }
+  nav .menu {
+    float: right;
+    padding: 1.5em; }
+    nav .menu a {
+      color: #F4F1EC;
+      text-decoration: none; }
+      nav .menu a:hover {
+        text-decoration: underline; }
 
-nav span {
-  display: block;
-  float: left;
-  padding: 1.5em;
-  font-family: "Bungee", sans-serif;
-}
+@media screen and (max-width: 767px) {
+  nav {
+    background-color: orange;
+    background-image: url(/images/asfalt-light.png); } }
+@media screen and (max-width: 499px) {
+  nav span, nav .menu {
+    float: none;
+    text-align: center;
+    padding: 1em; } }
 
-nav .menu {
-  float: right;
-  padding: 1.5em;
-}
-
-nav .menu a {
-  color: white;
-  text-decoration: none;
-}
-
-nav .menu a:hover {
-  text-decoration: underline;
-}
+/*# sourceMappingURL=nav.css.map */
