@@ -4,29 +4,39 @@
  * Do not modify these two selectors, please
  */
 html {
-  box-sizing: border-box; }
-
+  box-sizing: border-box;
+}
 *, *:before, *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /*
  * Global layout stuff
  */
+$darkGrey: #545149;
+$tweeterBlue: #4056A1;
+$tweeterWhite: #f4f1ec;
+$tweeterFont: "Bungee", sans-serif;
+$bodyFont: "Source Sans Pro", sans-serif;
+
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 24px; }
+  color: $darkGrey;
+  background-color: $tweeterWhite;
+  font-family: $bodyFont;
+  font-size: 24px;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   width: 66.7%;
   float: right;
   margin-top: 150px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+}
 
 #back-to-top {
   display: none;
@@ -41,16 +51,17 @@ main {
   right: 1.5em;
   bottom: 1.5em;
   background-color: orange;
-  font-family: "Bungee", sans-serif;
-  color: #4056A1;
+  font-family: $tweeterFont;
+  color: $tweeterBlue;
   text-decoration: none;
   transform: rotate(-90deg);
-  opacity: 0.8; }
+  opacity: 0.8;
+}
 
 @media screen and (max-width: 1023px) {
   main {
     float: none;
     width: 90%;
-    margin-top: 1em; } }
-
-/*# sourceMappingURL=layout.css.map */
+    margin-top: 1em;
+  }
+}
