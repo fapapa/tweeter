@@ -40,18 +40,20 @@ const resetValidation = () => {
   $("section.new-tweet .validation-error").hide('fast');
 };
 
+const showNewTweetForm = (event) => {
+  const $newTweetSection = $("section.new-tweet");
+  $newTweetSection.toggle('fast');
+  $newTweetSection.find("textarea").focus();
+  event.preventDefault();
+};
+
 $(document).ready(() => {
   const loadTweets = () => {
     $.ajax("/tweets").then(data => renderTweets(data));
   };
   loadTweets();
 
-  $("#new-tweet-link").click((event) => {
-    const $newTweetSection = $("section.new-tweet");
-    $newTweetSection.toggle('fast');
-    $newTweetSection.find("textarea").focus();
-    event.preventDefault();
-  });
+  $("#new-tweet-link").click(showNewTweetForm);
 
   $("form").on('submit', function(event) {
     const $form = $(this);
@@ -79,6 +81,7 @@ $(document).ready(() => {
 
   $("#back-to-top").click(() => {
     $("html,body").animate({ scrollTop: 0 }, 'fast');
+    showNewTweetForm();
     return false;
   });
 
