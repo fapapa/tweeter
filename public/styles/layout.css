@@ -30,3 +30,22 @@ main {
   margin-right: auto;
   margin-left: auto;
 }
+
+#back-to-top {
+  position: fixed;
+  width: 0;
+  height: 0;
+  padding-top: 37px;
+  padding-right: 63px;
+  padding-bottom: 63px;
+  padding-left: 37px;
+  border-radius: 50px;
+  right: 1.5em;
+  bottom: 1.5em;
+  background-color: orange;
+  font-family: "Bungee", sans-serif;
+  color: #4056A1;
+  text-decoration: none;
+  transform: rotate(-90deg);
+  opacity: 0.8;
+}
