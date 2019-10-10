@@ -13,6 +13,8 @@
     color: #C4CAE3; }
   #tweets .tweet:hover .handle {
     display: block; }
+  #tweets .tweet:hover .flags {
+    display: block; }
   #tweets .tweet .body {
     margin: 2em 15px;
     font-weight: 700; }
@@ -23,6 +25,9 @@
   #tweets footer .timestamp {
     float: left; }
   #tweets footer .flags {
+    display: none;
     float: right; }
+    #tweets footer .flags span {
+      margin-left: 15px; }
 
 /*# sourceMappingURL=tweet.css.map */
