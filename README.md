@@ -15,6 +15,11 @@ skills.
    served at <http://localhost:8080/>.
 1. Go to <http://localhost:8080/> in your browser.
 
+## Screenshots
+
+![Mobile Screenshot](/images/mobile.png)
+![Desktop Screenshot](/images/desktop.png)
+
 ## Dependencies
 
 - Express
