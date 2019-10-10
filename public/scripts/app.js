@@ -51,10 +51,11 @@ const showNewTweetForm = (event) => {
   event.preventDefault();
 };
 
+const loadTweets = () => {
+  $.ajax("/tweets").then(data => renderTweets(data));
+};
+
 $(document).ready(() => {
-  const loadTweets = () => {
-    $.ajax("/tweets").then(data => renderTweets(data));
-  };
   loadTweets();
 
   $("#new-tweet-link").click(showNewTweetForm);
