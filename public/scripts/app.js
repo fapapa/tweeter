@@ -68,7 +68,7 @@ const ajaxSubmit = function(event) {
     $.ajax($form.attr('action'), {
       method: $form.attr('method'),
       data: $form.serialize()
-    }).then(data => {
+    }).then(() => {
       $("#tweets").empty();
       loadTweets();
     });
