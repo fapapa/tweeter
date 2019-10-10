@@ -4,6 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+$(document).ready(() => {
+  loadTweets(); // load all tweets when the page is ready
+  $("#new-tweet-link").click(showNewTweetForm);
+  $("form").on('submit', ajaxSubmit); // submit via ajax
+  $("#back-to-top").click(scrollToTop);
+  $(window).scroll(maybeShowComposeButtons);
+});
+
 const createTweetElement = (tweetData) => {
   let tweetEl = $("<article>").addClass("tweet");
 
@@ -51,55 +59,50 @@ const showNewTweetForm = (event) => {
   event.preventDefault();
 };
 
-$(document).ready(() => {
-  const loadTweets = () => {
-    $.ajax("/tweets").then(data => renderTweets(data));
-  };
-  loadTweets();
+const loadTweets = () => {
+  $.ajax("/tweets").then(data => renderTweets(data));
+};
 
-  $("#new-tweet-link").click(showNewTweetForm);
+const ajaxSubmit = function(event) {
+  const $form = $(this);
+  const tweetText = $($form.children("textarea")[0]);
 
-  $("form").on('submit', function(event) {
-    const $form = $(this);
-    const tweetText = $($form.children("textarea")[0]);
+  resetValidation();
+  if (tweetText.val() === "") {
+    setValidationErrorMessage("Tweet must contain some text.");
+  } else if (tweetText.val().length > 140) {
+    setValidationErrorMessage("Tweet cannot be longer than 140 characters.");
+  } else {
+    $.ajax($form.attr('action'), {
+      method: $form.attr('method'),
+      data: $form.serialize()
+    }).then(() => {
+      $("#tweets").empty();
+      loadTweets();
+    });
+    $form.trigger('reset');
+    $(".new-tweet .counter").text("140");
+  }
 
-    resetValidation();
-    if (tweetText.val() === "") {
-      setValidationErrorMessage("Tweet must contain some text.");
-    } else if (tweetText.val().length > 140) {
-      setValidationErrorMessage("Tweet cannot be longer than 140 characters.");
-    } else {
-      $.ajax($form.attr('action'), {
-        method: $form.attr('method'),
-        data: $form.serialize()
-      }).then(data => {
-        $("#tweets").empty();
-        loadTweets();
-      });
-      $form.trigger('reset');
-      $(".new-tweet .counter").text("140");
-    }
+  event.preventDefault();
+};
 
-    event.preventDefault();
-  });
+const scrollToTop = (event) => {
+  event.preventDefault();
+  $("html,body").animate({ scrollTop: 0 }, 'fast');
+  showNewTweetForm();
+};
 
-  $("#back-to-top").click((event) => {
-    event.preventDefault();
-    $("html,body").animate({ scrollTop: 0 }, 'fast');
-    showNewTweetForm();
-  });
+const maybeShowComposeButtons = () => {
+  const scrollLevel = $(window).scrollTop();
+  const backToTop = $("#back-to-top");
+  const newTweetLink = $("#new-tweet-link");
 
-  $(window).scroll(() => {
-    const scrollLevel = $(window).scrollTop();
-    const backToTop = $("#back-to-top");
-    const newTweetLink = $("#new-tweet-link");
-
-    if (scrollLevel > 400) {
-      backToTop.show();
-      newTweetLink.hide();
-    } else {
-      backToTop.hide();
-      newTweetLink.show();
-    }
-  });
-});
+  if (scrollLevel > 400) {
+    backToTop.show();
+    newTweetLink.hide();
+  } else {
+    backToTop.hide();
+    newTweetLink.show();
+  }
+};
