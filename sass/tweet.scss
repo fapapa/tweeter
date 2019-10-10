@@ -34,6 +34,9 @@ $tweeterLightBlue: #C4CAE3;
     }
     .flags {
       float: right;
+      span {
+        margin-left: 15px;
+      }
     }
   }
 }

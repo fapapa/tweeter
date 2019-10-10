@@ -24,5 +24,7 @@
     float: left; }
   #tweets footer .flags {
     float: right; }
+    #tweets footer .flags span {
+      margin-left: 15px; }
 
 /*# sourceMappingURL=tweet.css.map */

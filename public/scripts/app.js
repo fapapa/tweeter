@@ -17,7 +17,11 @@ const createTweetElement = (tweetData) => {
 
   let footerEl = $("<footer>");
   footerEl.append($("<div>").addClass("timestamp").text(moment(new Date(tweetData.created_at)).fromNow()));
-  footerEl.append($("<div>").addClass("flags").text("flags"));
+  let linksContainer = $("<div>").addClass("flags");
+  linksContainer.append($("<span>").addClass("fas").addClass("fa-flag"));
+  linksContainer.append($("<span>").addClass("fas").addClass("fa-retweet"));
+  linksContainer.append($("<span>").addClass("fas").addClass("fa-heart"));
+  footerEl.append(linksContainer);
   tweetEl.append(footerEl);
 
   return tweetEl;
