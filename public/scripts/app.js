@@ -16,8 +16,12 @@ const createTweetElement = (tweetData) => {
   tweetEl.append($("<div>").addClass("body").text(tweetData.content.text));
 
   let footerEl = $("<footer>");
-  footerEl.append($("<div>").addClass("timestamp").text(new Date(tweetData.created_at)));
-  footerEl.append($("<div>").addClass("flags").text("flags"));
+  footerEl.append($("<div>").addClass("timestamp").text(moment(new Date(tweetData.created_at)).fromNow()));
+  let linksContainer = $("<div>").addClass("flags");
+  linksContainer.append($("<span>").addClass("fas").addClass("fa-flag"));
+  linksContainer.append($("<span>").addClass("fas").addClass("fa-retweet"));
+  linksContainer.append($("<span>").addClass("fas").addClass("fa-heart"));
+  footerEl.append(linksContainer);
   tweetEl.append(footerEl);
 
   return tweetEl;
@@ -79,10 +83,10 @@ $(document).ready(() => {
     event.preventDefault();
   });
 
-  $("#back-to-top").click(() => {
+  $("#back-to-top").click((event) => {
+    event.preventDefault();
     $("html,body").animate({ scrollTop: 0 }, 'fast');
     showNewTweetForm();
-    return false;
   });
 
   $(window).scroll(() => {

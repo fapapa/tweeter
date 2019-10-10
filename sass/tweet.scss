@@ -17,9 +17,8 @@ $tweeterLightBlue: #C4CAE3;
       float: right;
       color: $tweeterLightBlue;
     }
-    &:hover .handle {
-      display: block;
-    }
+    &:hover .handle { display: block; }
+    &:hover .flags { display: block; }
     .body {
       margin: 2em 15px;
       font-weight: 700;
@@ -33,7 +32,11 @@ $tweeterLightBlue: #C4CAE3;
       float: left;
     }
     .flags {
+      display: none;
       float: right;
+      span {
+        margin-left: 15px;
+      }
     }
   }
 }
