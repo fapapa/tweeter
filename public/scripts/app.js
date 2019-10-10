@@ -79,10 +79,10 @@ $(document).ready(() => {
     event.preventDefault();
   });
 
-  $("#back-to-top").click(() => {
+  $("#back-to-top").click((event) => {
+    event.preventDefault();
     $("html,body").animate({ scrollTop: 0 }, 'fast');
     showNewTweetForm();
-    return false;
   });
 
   $(window).scroll(() => {
