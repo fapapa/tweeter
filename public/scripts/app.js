@@ -55,52 +55,54 @@ const loadTweets = () => {
   $.ajax("/tweets").then(data => renderTweets(data));
 };
 
+const ajaxSubmit = function(event) {
+  const $form = $(this);
+  const tweetText = $($form.children("textarea")[0]);
+
+  resetValidation();
+  if (tweetText.val() === "") {
+    setValidationErrorMessage("Tweet must contain some text.");
+  } else if (tweetText.val().length > 140) {
+    setValidationErrorMessage("Tweet cannot be longer than 140 characters.");
+  } else {
+    $.ajax($form.attr('action'), {
+      method: $form.attr('method'),
+      data: $form.serialize()
+    }).then(data => {
+      $("#tweets").empty();
+      loadTweets();
+    });
+    $form.trigger('reset');
+    $(".new-tweet .counter").text("140");
+  }
+
+  event.preventDefault();
+};
+
+const scrollToTop = (event) => {
+  event.preventDefault();
+  $("html,body").animate({ scrollTop: 0 }, 'fast');
+  showNewTweetForm();
+};
+
+const maybeShowComposeButtons = () => {
+  const scrollLevel = $(window).scrollTop();
+  const backToTop = $("#back-to-top");
+  const newTweetLink = $("#new-tweet-link");
+
+  if (scrollLevel > 400) {
+    backToTop.show();
+    newTweetLink.hide();
+  } else {
+    backToTop.hide();
+    newTweetLink.show();
+  }
+};
+
 $(document).ready(() => {
-  loadTweets();
-
+  loadTweets(); // load all tweets when the page is ready
   $("#new-tweet-link").click(showNewTweetForm);
-
-  $("form").on('submit', function(event) {
-    const $form = $(this);
-    const tweetText = $($form.children("textarea")[0]);
-
-    resetValidation();
-    if (tweetText.val() === "") {
-      setValidationErrorMessage("Tweet must contain some text.");
-    } else if (tweetText.val().length > 140) {
-      setValidationErrorMessage("Tweet cannot be longer than 140 characters.");
-    } else {
-      $.ajax($form.attr('action'), {
-        method: $form.attr('method'),
-        data: $form.serialize()
-      }).then(data => {
-        $("#tweets").empty();
-        loadTweets();
-      });
-      $form.trigger('reset');
-      $(".new-tweet .counter").text("140");
-    }
-
-    event.preventDefault();
-  });
-
-  $("#back-to-top").click((event) => {
-    event.preventDefault();
-    $("html,body").animate({ scrollTop: 0 }, 'fast');
-    showNewTweetForm();
-  });
-
-  $(window).scroll(() => {
-    const scrollLevel = $(window).scrollTop();
-    const backToTop = $("#back-to-top");
-    const newTweetLink = $("#new-tweet-link");
-
-    if (scrollLevel > 400) {
-      backToTop.show();
-      newTweetLink.hide();
-    } else {
-      backToTop.hide();
-      newTweetLink.show();
-    }
-  });
+  $("form").on('submit', ajaxSubmit); // submit via ajax
+  $("#back-to-top").click(scrollToTop);
+  $(window).scroll(maybeShowComposeButtons);
 });
