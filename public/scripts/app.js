@@ -4,6 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+$(document).ready(() => {
+  loadTweets(); // load all tweets when the page is ready
+  $("#new-tweet-link").click(showNewTweetForm);
+  $("form").on('submit', ajaxSubmit); // submit via ajax
+  $("#back-to-top").click(scrollToTop);
+  $(window).scroll(maybeShowComposeButtons);
+});
+
 const createTweetElement = (tweetData) => {
   let tweetEl = $("<article>").addClass("tweet");
 
@@ -98,11 +106,3 @@ const maybeShowComposeButtons = () => {
     newTweetLink.show();
   }
 };
-
-$(document).ready(() => {
-  loadTweets(); // load all tweets when the page is ready
-  $("#new-tweet-link").click(showNewTweetForm);
-  $("form").on('submit', ajaxSubmit); // submit via ajax
-  $("#back-to-top").click(scrollToTop);
-  $(window).scroll(maybeShowComposeButtons);
-});
